@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", "docker:enableMajor"],
+  "dependencyDashboard": true,
+  "rebaseWhen": "behind-base-branch",
+  "schedule": ["after 9am and before 5pm every weekday"],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "groupName": "development (patch and minor) upgrades",
+      "groupSlug": "dev-deps",
+      "matchUpdateTypes": ["minor", "patch"]
+    }
+  ],
+  "assignees": ["user1", "user2", "user3", "user4", "user5"],
+  "assigneesSampleSize": 1
+}

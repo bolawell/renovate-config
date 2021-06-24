@@ -21,7 +21,7 @@ In other repos, your `renovate.json` should look like:
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>renovate2/renovate-config"]
+  "extends": ["github>eana/renovate-config"]
 }
 ```
 

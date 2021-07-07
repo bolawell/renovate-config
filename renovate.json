@@ -4,6 +4,15 @@
   "dependencyDashboard": true,
   "rebaseWhen": "behind-base-branch",
   "schedule": ["after 9am and before 5pm every weekday"],
+  "regexManagers": [
+    {
+      "fileMatch": ["(^|/)Dockerfile$"],
+      "matchStrings": [
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"?(?<currentValue>.*?)\"?\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+    }
+  ],
   "packageRules": [
     {
       "packagePatterns": ["*"],

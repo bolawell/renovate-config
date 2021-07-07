@@ -25,6 +25,40 @@ In other repos, your `renovate.json` should look like:
 }
 ```
 
+## Custom Manager Support using Regex
+
+The `regex manager` is designed to allow users to manually configure Renovate
+for how to find dependencies that aren't detected by the built-in package
+managers.
+
+The `regex manager` is configured to parse version environment variables within
+the `Dockerfile`.
+
+```json
+{
+  "regexManagers": [
+    {
+      "fileMatch": ["(^|/)Dockerfile$"],
+      "matchStrings": [
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"?(?<currentValue>.*?)\"?\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+    }
+  ]
+}
+```
+
+Add environment variables to `Dockerfile` which contain the package version and
+annotate them using comments, which the regex manager will end up parsing:
+
+```
+# renovate: datasource=github-releases depName=hashicorp/terraform versioning=loose
+ENV TERRAFORM_VERSION="1.0.0"
+```
+
+The example above will look for the newest version of `terraform` within the
+`hashicorp/terraform` github repository.
+
 ## Configuration Summary
 
 Based on this config, Renovate will:

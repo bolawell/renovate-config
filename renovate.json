@@ -4,6 +4,8 @@
   "dependencyDashboard": true,
   "rebaseWhen": "behind-base-branch",
   "schedule": ["after 9am and before 5pm every weekday"],
+  "assignees": ["@eana"],
+  "reviewers": ["@eana"],
   "regexManagers": [
     {
       "fileMatch": ["(^|/)Dockerfile$"],

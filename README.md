@@ -49,15 +49,29 @@ the `Dockerfile`.
 ```
 
 Add environment variables to `Dockerfile` which contain the package version and
-annotate them using comments, which the regex manager will end up parsing:
+annotate them using comments, which the regex manager will end up parsing.
+
+Consider the following `Dockerfile`
 
 ```
-# renovate: datasource=github-releases depName=hashicorp/terraform versioning=loose
-ENV TERRAFORM_VERSION="1.0.0"
+FROM debian:11.0-slim
+
+# renovate: datasource=github-releases depName=spaam/svtplay-dl versioning=loose
+ENV SVTPLAY_VERSION="4.5"
+
+# Install svtplay-dl
+RUN set -xe && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends gnupg curl ca-certificates && \
+    curl -s https://svtplay-dl.se/release-key.txt | apt-key add - && \
+    echo "deb https://apt.svtplay-dl.se/ svtplay-dl release" | tee /etc/apt/sources.list.d/svtplay-dl.list && \
+    apt-get update && \
+    apt-get install svtplay-dl=${SVTPLAY_VERSION} -V
 ```
 
-The example above will look for the newest version of `terraform` within the
-`hashicorp/terraform` github repository.
+The example above will look for the newest version of `svtplay-dl` within the
+[svtplay-dl](https://github.com/spaam/svtplay-dl) github repository and update
+the value of `SVTPLAY_VERSION` when a new version is available.
 
 ## Configuration Summary
 

@@ -5,6 +5,7 @@
   "rebaseWhen": "behind-base-branch",
   "assignees": ["@eana"],
   "reviewers": ["@eana"],
+  "labels": ["dependencies"],
   "regexManagers": [
     {
       "fileMatch": ["(^|/)Dockerfile$"],

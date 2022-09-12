@@ -28,6 +28,10 @@
       "groupName": "development (patch and minor) upgrades",
       "groupSlug": "dev-deps",
       "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "matchPackageNames": ["linuxserver/docker-qbittorrent"],
+      "allowedVersions": "!/\\d+.[2-3].\\d+.\\d{14}-\\d{4}-.*ubuntu.*-ls\\d+$/"
     }
   ]
 }

@@ -73,6 +73,21 @@ The example above will look for the newest version of `svtplay-dl` within the
 [svtplay-dl](https://github.com/spaam/svtplay-dl) github repository and update
 the value of `SVTPLAY_VERSION` when a new version is available.
 
+## Ignore certain versions
+
+Sometimes it is necessary to ignore certain versions. One good example is
+`linuxserver/docker-qbittorrent` which changed the tagging convention from
+`14.3.9.99202110311443-7435-01519b5e7ubuntu20.04.1-ls166` to `4.4.5-r0-ls213`.
+
+We can ignore the old format by using:
+
+```json
+{
+  "matchPackageNames": ["linuxserver/docker-qbittorrent"],
+  "allowedVersions": "!/\\d+.[2-3].\\d+.\\d{14}-\\d{4}-.*ubuntu.*-ls\\d+$/"
+}
+```
+
 ## Configuration Summary
 
 Based on this config, Renovate will:

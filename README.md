@@ -6,8 +6,8 @@ config across all or most of them, hence I have a preset config so that we can
 Renovate configuration I can make the change in one location rather than having
 to copy/paste it to every repository individually.
 
-The [renovate.json](./renovate.json) file in this repository is the preset
-config I use in all repositories.
+The [default.json](./default.json) file in this repository is the preset config
+I use in all repositories.
 
 ## Preset config
 

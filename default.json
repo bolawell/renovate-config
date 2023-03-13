@@ -4,7 +4,6 @@
   "dependencyDashboard": true,
   "rebaseWhen": "behind-base-branch",
   "assignees": ["@eana"],
-  "reviewers": ["@eana"],
   "labels": ["dependencies"],
   "regexManagers": [
     {

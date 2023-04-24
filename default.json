@@ -3,10 +3,11 @@
   "extends": ["config:base", ":enablePreCommit"],
   "dependencyDashboard": true,
   "rebaseWhen": "behind-base-branch",
-  "assignees": ["@eana"],
+  "reviewers": ["@eana"],
   "labels": ["dependencies"],
   "timezone": "Etc/UTC",
   "schedule": ["after 8am and before 5pm every weekday"],
+  "platformAutomerge": true,
   "regexManagers": [
     {
       "fileMatch": ["(^|/)Dockerfile$"],
@@ -28,11 +29,13 @@
       "packagePatterns": ["*"],
       "groupName": "development (patch and minor) upgrades",
       "groupSlug": "dev-deps",
-      "matchUpdateTypes": ["minor", "patch"]
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
     },
     {
       "matchPackageNames": ["linuxserver/docker-qbittorrent"],
-      "allowedVersions": "!/\\d+.[2-3].\\d+.\\d{14}-\\d{4}-.*ubuntu.*-ls\\d+$/"
+      "allowedVersions": "!/\\d+.[2-3].\\d+.\\d{14}-\\d{4}-.*ubuntu.*-ls\\d+$/",
+      "automerge": true
     }
   ]
 }

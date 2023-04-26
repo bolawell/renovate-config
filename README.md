@@ -87,28 +87,3 @@ We can ignore the old format by using:
   "allowedVersions": "!/\\d+.[2-3].\\d+.\\d{14}-\\d{4}-.*ubuntu.*-ls\\d+$/"
 }
 ```
-
-## Configuration Summary
-
-Based on this config, Renovate will:
-
-- Separate major versions of dependencies into individual branches/MRs
-- Do not separate patch and minor upgrades into separate MRs for the same
-  dependency
-- Upgrade to unstable versions only if the existing version is unstable
-- Raise MRs immediately (after branch is created)
-- If semantic commits detected, use semantic commit type fix for dependencies
-  and chore for all others
-- Keep existing branches updated even when not scheduled
-- Disable automerging feature - wait for humans to merge all MRs
-- Ignore node_modules, bower_components, vendor and various test/tests
-  directories
-- Autodetect whether to pin dependencies or maintain ranges
-- Rate limit MR creation to a maximum of two per hour
-- Limit to maximum 20 open MRs at any time
-- Group known monorepo packages together
-- Use curated list of recommended non-monorepo package groupings
-- Ignore spring cloud 1.x releases
-- Ignore http4s digest-based 1.x milestones
-- Enable Renovate Dependency Dashboard creation
-- Run Renovate on following schedule: after 9am and before 5pm every weekday

@@ -6,7 +6,7 @@
   "reviewers": ["@eana"],
   "labels": ["dependencies"],
   "timezone": "Etc/UTC",
-  "schedule": ["after 8am and before 5pm every weekday"],
+  "schedule": ["after 8am and before 8pm every weekday"],
   "platformAutomerge": true,
   "regexManagers": [
     {

@@ -34,11 +34,6 @@
       "groupSlug": "dev-deps",
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
-    },
-    {
-      "matchPackageNames": ["linuxserver/docker-qbittorrent"],
-      "allowedVersions": "!/\\d+.[2-3].\\d+.\\d{14}-\\d{4}-.*ubuntu.*-ls\\d+$/",
-      "automerge": true
     }
   ]
 }

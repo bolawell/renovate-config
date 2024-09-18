@@ -11,6 +11,11 @@
   "digest": {
     "enabled": false
   },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "schedule": ["after 8am and before 8pm every weekday"]
+  },
   "regexManagers": [
     {
       "fileMatch": ["(^|/)Dockerfile$"],

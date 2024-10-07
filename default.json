@@ -34,10 +34,17 @@
   ],
   "packageRules": [
     {
+      "description": "Automatically groups all minor and patch updates",
       "packagePatterns": ["*"],
       "groupName": "development (patch and minor) upgrades",
       "groupSlug": "dev-deps",
       "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "description": "Automerge all pre-commit/pre-commit-hook updates, including major versions",
+      "managers": ["pre-commit"],
+      "packageNames": ["pre-commit/pre-commit-hooks"],
       "automerge": true
     }
   ]

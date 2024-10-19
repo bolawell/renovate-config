@@ -46,6 +46,15 @@
       "managers": ["pre-commit"],
       "packageNames": ["pre-commit/pre-commit-hooks"],
       "automerge": true
+    },
+    {
+      "matchManagers": ["terraform"],
+      "postUpgradeTasks": {
+        "commands": [
+          "pre-commit install",
+          "pre-commit run --files $(git ls-files --modified) || true"
+        ]
+      }
     }
   ]
 }

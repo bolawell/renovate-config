@@ -16,6 +16,9 @@
     "automerge": true,
     "schedule": ["after 8am and before 8pm every weekday"]
   },
+  "nix": {
+    "enabled": true
+  },
   "regexManagers": [
     {
       "fileMatch": ["(^|/)Dockerfile$"],

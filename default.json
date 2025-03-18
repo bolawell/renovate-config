@@ -49,6 +49,13 @@
       "managers": ["pre-commit"],
       "packageNames": ["pre-commit/pre-commit-hooks"],
       "automerge": true
+    },
+    {
+      "description": "All GitHub Actions dependencies",
+      "groupName": "GitHub Actions",
+      "groupSlug": "github-actions",
+      "matchManagers": ["github-actions"],
+      "automerge": true
     }
   ]
 }
